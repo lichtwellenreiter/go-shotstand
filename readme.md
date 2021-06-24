@@ -1,8 +1,5 @@
 ### New Shotstand implemented with Golang
 
-
-
-
 #### Build for mac
 ```bash
 go build -o shotstand-mac-0.0.1
