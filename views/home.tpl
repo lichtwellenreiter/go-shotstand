@@ -53,6 +53,12 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-12">
+            <span id="updated"></span>
+        </div>
+    </div>
+
     <script src="/static/js/canvasjs.min.js"></script>
     <script type="text/javascript">
 
@@ -73,14 +79,14 @@
                         'Is the server running?');
                 } else {
 
-                    console.log(data);
+                    // console.log(data);
                     chartData = data;
                     createChart();
 
                     // Cleanup Table
                     tbody.innerHTML = '';
                     createTable();
-                    // updateTime();
+                    updateTime();
                     updateTotal();
                 }
             });
@@ -93,7 +99,7 @@
                 if (err != null) {
                     alert('Cannot getTotal. Is the server running?');
                 } else {
-                    console.log(data);
+                    // console.log(data);
                     // console.log('total is ' + data.data);
                     let totalelem = document.getElementById('total');
                     totalelem.innerHTML = 'Total ' + data;
@@ -144,12 +150,7 @@
          */
         function doGet(resource, callback) {
 
-            let port = "";
-
-            if (navigator.platform === "MacIntel") {
-                port = ":8080";
-            }
-
+            let port = ":8080";
             let url = 'http://' + window.location.hostname + port + resource;
             let xhr = new XMLHttpRequest();
             xhr.open('GET', url, true);
