@@ -75,5 +75,17 @@ func GetShotdata() []Datapoint {
 		return datapoints[i].Y > datapoints[j].Y
 	})
 
+	if len(datapoints) > 15 {
+		return datapoints[:15]
+	}
+
 	return datapoints
+}
+
+func ResetShotdata() {
+	keys := rdb.Keys(ctx, "*")
+	res, _ := keys.Result()
+	for _, key := range res {
+		rdb.Del(ctx, key)
+	}
 }

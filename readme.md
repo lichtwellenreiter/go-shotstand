@@ -2,9 +2,8 @@
 
 ### Prerequisites
 
-#### Chromium
-
-Chromium Browser (normally this one is default)
+#### Midori Browser
+```sudo apt install -y midori```
 
 #### Redis
 

@@ -9,5 +9,7 @@ type HomeController struct {
 }
 
 func (c *HomeController) Get() {
+	flash := beego.ReadFromRequest(&c.Controller)
+	c.Data["message"] = flash.Data["notice"]
 	c.TplName = "home.tpl"
 }

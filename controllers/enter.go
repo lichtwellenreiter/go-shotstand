@@ -1,10 +1,8 @@
 package controllers
 
 import (
-	"context"
 	"fmt"
 	beego "github.com/beego/beego/v2/server/web"
-	"github.com/go-redis/redis/v8"
 	_ "github.com/go-redis/redis/v8"
 	shotmodel "shotstand/models"
 	"strconv"
@@ -13,13 +11,6 @@ import (
 type EnterController struct {
 	beego.Controller
 }
-
-var ctx = context.Background()
-var rdb = redis.NewClient(&redis.Options{
-	Addr:     "localhost:6379",
-	Password: "",
-	DB:       0,
-})
 
 func (c *EnterController) Get() {
 	flash := beego.ReadFromRequest(&c.Controller)

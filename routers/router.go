@@ -13,6 +13,10 @@ func init() {
 	beego.Router("/eintrag", &controllers.EnterController{})
 	beego.Router("/eingabe", &controllers.EnterController{})
 
+	beego.Router("/reset", &controllers.ResetController{})
+
+	beego.Router("/export", &controllers.ExportController{})
+
 	beego.Router("/getGroups", &controllers.GroupController{})
 	beego.Router("/getTotal", &controllers.TotalController{})
 }

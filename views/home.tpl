@@ -65,6 +65,11 @@
         let chartData = [];
         let tbody = document.getElementById('grouptable');
 
+        setInterval(function () {
+            window.location.reload();
+        }, 60000 * 10)
+
+
         runner();
         setInterval(runner, 10000);
 
